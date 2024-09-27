@@ -5,6 +5,8 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
+import javax.swing.plaf.SliderUI;
+import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -23,10 +25,22 @@ public class Program {
             System.out.println(x);
         }
 
-        System.out.println("\n=== TEST 2: seller findAll ===");
+        System.out.println("\n=== TEST 3: seller findAll ===");
         list = sellerDao.findAll();
         for(Seller x : list){
             System.out.println(x);
         }
+
+        System.out.println("\n=== TEST 4: seller insert ===");
+        Seller newSeller = new Seller(null, "greg", "greg@gmail.com", new Date(), 4000.0, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id = " + newSeller.getId());
+
+        System.out.println("\n=== TEST 5: seller update ===");
+        seller = sellerDao.findById(1);
+        seller.setName("Martha Waine");
+        sellerDao.update(seller);
+        System.out.println("Update Complete");
+
     }
 }
