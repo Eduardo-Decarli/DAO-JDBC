@@ -2,14 +2,14 @@ package model.entities;
 
 import java.io.Serializable;
 
-public class Deparment implements Serializable {
+public class Department implements Serializable {
     private Integer id;
     private String name;
 
-    public Deparment(){
+    public Department() {
     }
 
-    public Deparment(Integer id, String name) {
+    public Department(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -31,7 +31,7 @@ public class Deparment implements Serializable {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
@@ -39,19 +39,18 @@ public class Deparment implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(this == obj){
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if(obj == null){
+        if (obj == null) {
             return false;
-        }
-        else if(getClass() != obj.getClass())
+        } else if (getClass() != obj.getClass())
             return false;
         return true;
     }
 
-    public String toString(){
+    public String toString() {
         return "Deparment [id:" + id + ", name: " + name + "]";
     }
 }
